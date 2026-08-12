@@ -74,14 +74,29 @@ LEDGER_CSS = """
   --text:#1B2A4A;
   --text-muted:#5B6472;
 }
-
-html, body, [class*="css"]{ font-family:'Inter', sans-serif; }
-h1, h2, h3, .ledger-title { font-family:'Source Serif 4', serif; }
+html, body, [class*="css"]{ font-family:'Inter', sans-serif; color:var(--text); }
+h1, h2, h3 { color:var(--text); font-family:'Source Serif 4', serif; }
+.ledger-title{ font-family:'Source Serif 4', serif; }
+.stApp{ color:var(--text); }
+.stApp p, .stApp li, .stApp span, .stApp label,
+.stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span,
+[data-testid="stMarkdownContainer"] p, [data-testid="stMarkdownContainer"] li{
+  color:var(--text) !important;
+}
+[data-testid="stChatMessageContent"] p,
+[data-testid="stChatMessageContent"] li,
+[data-testid="stChatMessageContent"] span{
+  color:var(--text) !important;
+}
+.stCaption, [data-testid="stCaptionContainer"]{ color:var(--text-muted) !important; }
+[data-testid="stAlert"] p, [data-testid="stAlert"] span{ color:var(--text) !important; }
+[data-testid="stChatInput"] textarea{ color:var(--text) !important; }
+[data-testid="stChatInput"] textarea::placeholder{ color:var(--text-muted) !important; opacity:1; }
+[data-testid="stSelectbox"] *{ color:var(--text) !important; }
+div.stButton > button{ color:var(--text) !important; }
 code, .ledger-tag, .stCaption, small { font-family:'IBM Plex Mono', monospace; }
-
 .stApp{ background:var(--paper); }
 .main .block-container{ padding-top:1.5rem; max-width:900px; }
-
 /* ---- Masthead ---- */
 .ledger-header{
   border-bottom:2px solid var(--ink);
@@ -115,7 +130,6 @@ code, .ledger-tag, .stCaption, small { font-family:'IBM Plex Mono', monospace; }
   background:repeating-linear-gradient(90deg, var(--brass) 0 6px, transparent 6px 11px);
   margin:14px 0 22px 0;
 }
-
 /* ---- Sidebar ---- */
 section[data-testid="stSidebar"]{
   background:var(--ink);
@@ -150,15 +164,12 @@ section[data-testid="stSidebar"] div.stButton > button:hover{
   background:var(--brass) !important;
   color:var(--ink) !important;
 }
-
 /* ---- Buttons (main area) ---- */
 div.stButton > button, [data-testid="stChatInput"] button{
   border-radius:6px;
 }
-
 /* ---- Alerts ---- */
 [data-testid="stAlert"]{ border-radius:6px; border-left:4px solid var(--brass); }
-
 /* ---- Chat messages: index-card look ---- */
 [data-testid="stChatMessage"]{
   background:#FFFFFF;
@@ -176,7 +187,6 @@ div.stButton > button, [data-testid="stChatInput"] button{
 [data-testid="stChatMessageAvatarUser"]{
   background:var(--ink) !important;
 }
-
 /* ---- Routing tag pill ---- */
 .ledger-tag{
   display:inline-block;
@@ -191,13 +201,11 @@ div.stButton > button, [data-testid="stChatInput"] button{
 .ledger-tag.academic{ background:var(--academic-bg); color:var(--academic); }
 .ledger-tag.fee{ background:var(--fee-bg); color:var(--fee); }
 .ledger-tag.general{ background:var(--general-bg); color:var(--general); }
-
 /* ---- Chat input ---- */
 [data-testid="stChatInput"]{
   border:1px solid var(--brass) !important;
   border-radius:8px !important;
 }
-
 /* ---- Divider ---- */
 hr{ border-color:var(--hairline); }
 </style>
