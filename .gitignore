@@ -1,0 +1,50 @@
+# ===== Secrets & environment =====
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+!.streamlit/secrets.toml.example
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# ===== Virtual environments =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== Streamlit =====
+.streamlit/config.toml
+
+# ===== Vector store / model caches =====
+faiss_index/
+*.faiss
+*.pkl
+.cache/
+huggingface/
+sentence_transformers/
+
+# ===== Uploaded / source PDFs (avoid committing large or private docs) =====
+*.pdf
+!sample*.pdf
+
+# ===== OS / editor cruft =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ===== Logs =====
+*.log
